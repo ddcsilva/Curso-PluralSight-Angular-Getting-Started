@@ -1,52 +1,52 @@
 [
   {
-    "productId": 1,
-    "productName": "Leaf Rake",
-    "productCode": "GDN-0011",
-    "releaseDate": "March 19, 2021",
-    "description": "Leaf rake with 48-inch wooden handle.",
-    "price": 19.95,
-    "starRating": 3.2,
-    "imageUrl": "assets/images/leaf_rake.png"
+    "id": 1,
+    "nomeProduto": "Leaf Rake",
+    "codigoProduto": "GDN-0011",
+    "dataLancamento": "March 19, 2021",
+    "descricao": "Leaf rake with 48-inch wooden handle.",
+    "preco": 19.95,
+    "classificacao": 3.2,
+    "imagem": "assets/images/leaf_rake.png"
   },
   {
-    "productId": 2,
-    "productName": "Garden Cart",
-    "productCode": "GDN-0023",
-    "releaseDate": "March 18, 2021",
-    "description": "15 gallon capacity rolling garden cart",
-    "price": 32.99,
-    "starRating": 4.2,
-    "imageUrl": "assets/images/garden_cart.png"
+    "id": 2,
+    "nomeProduto": "Garden Cart",
+    "codigoProduto": "GDN-0023",
+    "dataLancamento": "March 18, 2021",
+    "descricao": "15 gallon capacity rolling garden cart",
+    "preco": 32.99,
+    "classificacao": 4.2,
+    "imagem": "assets/images/garden_cart.png"
   },
   {
-    "productId": 5,
-    "productName": "Hammer",
-    "productCode": "TBX-0048",
-    "releaseDate": "May 21, 2021",
-    "description": "Curved claw steel hammer",
-    "price": 8.9,
-    "starRating": 4.8,
-    "imageUrl": "assets/images/hammer.png"
+    "id": 5,
+    "nomeProduto": "Hammer",
+    "codigoProduto": "TBX-0048",
+    "dataLancamento": "May 21, 2021",
+    "descricao": "Curved claw steel hammer",
+    "preco": 8.9,
+    "classificacao": 4.8,
+    "imagem": "assets/images/hammer.png"
   },
   {
-    "productId": 8,
-    "productName": "Saw",
-    "productCode": "TBX-0022",
-    "releaseDate": "May 15, 2021",
-    "description": "15-inch steel blade hand saw",
-    "price": 11.55,
-    "starRating": 3.7,
-    "imageUrl": "assets/images/saw.png"
+    "id": 8,
+    "nomeProduto": "Saw",
+    "codigoProduto": "TBX-0022",
+    "dataLancamento": "May 15, 2021",
+    "descricao": "15-inch steel blade hand saw",
+    "preco": 11.55,
+    "classificacao": 3.7,
+    "imagem": "assets/images/saw.png"
   },
   {
-    "productId": 10,
-    "productName": "Video Game Controller",
-    "productCode": "GMG-0042",
-    "releaseDate": "October 15, 2020",
-    "description": "Standard two-button video game controller",
-    "price": 35.95,
-    "starRating": 4.6,
-    "imageUrl": "assets/images/xbox-controller.png"
+    "id": 10,
+    "nomeProduto": "Video Game Controller",
+    "codigoProduto": "GMG-0042",
+    "dataLancamento": "October 15, 2020",
+    "descricao": "Standard two-button video game controller",
+    "preco": 35.95,
+    "classificacao": 4.6,
+    "imagem": "assets/images/xbox-controller.png"
   }
 ]
