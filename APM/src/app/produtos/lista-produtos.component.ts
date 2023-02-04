@@ -6,6 +6,8 @@ import { Component } from "@angular/core";
 })
 export class ListaProdutosComponent {
     tituloPagina: string = "Lista de Produtos";
+    larguraImagemProduto: number = 50;
+    margemImagemProduto: number = 2;
     produtos: any[] = [
         {
             "id": 1,

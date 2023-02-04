@@ -32,7 +32,12 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let produto of produtos">
-                        <td></td>
+                        <td>
+                            <img [src]="produto.imagem" 
+                                 [title]="produto.nomeProduto"
+                                 [style.width.px]="larguraImagemProduto"
+                                 [style.margin.px]="margemImagemProduto">
+                        </td>
                         <td>{{ produto.nomeProduto }}</td>
                         <td>{{ produto.codigoProduto }}</td>
                         <td>{{ produto.dataLancamento }}</td>
