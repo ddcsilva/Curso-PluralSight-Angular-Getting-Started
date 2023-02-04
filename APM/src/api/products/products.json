@@ -1,50 +1,50 @@
 [
   {
     "id": 1,
-    "nomeProduto": "Leaf Rake",
+    "nomeProduto": "Ancinho",
     "codigoProduto": "GDN-0011",
     "dataLancamento": "March 19, 2021",
-    "descricao": "Leaf rake with 48-inch wooden handle.",
+    "descricao": "Ancinho de folha com alça de madeira de 48 polegadas.",
     "preco": 19.95,
     "classificacao": 3.2,
     "imagem": "assets/images/leaf_rake.png"
   },
   {
     "id": 2,
-    "nomeProduto": "Garden Cart",
+    "nomeProduto": "Carrinho de Jardinagem",
     "codigoProduto": "GDN-0023",
     "dataLancamento": "March 18, 2021",
-    "descricao": "15 gallon capacity rolling garden cart",
+    "descricao": "Carrinho de Jardinagem com capacidade para 15 galões",
     "preco": 32.99,
     "classificacao": 4.2,
     "imagem": "assets/images/garden_cart.png"
   },
   {
     "id": 5,
-    "nomeProduto": "Hammer",
+    "nomeProduto": "Martelo",
     "codigoProduto": "TBX-0048",
     "dataLancamento": "May 21, 2021",
-    "descricao": "Curved claw steel hammer",
+    "descricao": "Martelo de aço de garra curva",
     "preco": 8.9,
     "classificacao": 4.8,
     "imagem": "assets/images/hammer.png"
   },
   {
     "id": 8,
-    "nomeProduto": "Saw",
+    "nomeProduto": "Serra",
     "codigoProduto": "TBX-0022",
     "dataLancamento": "May 15, 2021",
-    "descricao": "15-inch steel blade hand saw",
+    "descricao": "Serra manual de lâmina de aço de 15 polegadas",
     "preco": 11.55,
     "classificacao": 3.7,
     "imagem": "assets/images/saw.png"
   },
   {
     "id": 10,
-    "nomeProduto": "Video Game Controller",
+    "nomeProduto": "Controle de Videogame",
     "codigoProduto": "GMG-0042",
     "dataLancamento": "October 15, 2020",
-    "descricao": "Standard two-button video game controller",
+    "descricao": "Contole de videogame padrão de dois botões",
     "preco": 35.95,
     "classificacao": 4.6,
     "imagem": "assets/images/xbox-controller.png"

@@ -40,9 +40,9 @@
                                  [style.margin.px]="margemImagemProduto">
                         </td>
                         <td>{{ produto.nomeProduto }}</td>
-                        <td>{{ produto.codigoProduto }}</td>
+                        <td>{{ produto.codigoProduto | lowercase }}</td>
                         <td>{{ produto.dataLancamento }}</td>
-                        <td>{{ produto.preco }}</td>
+                        <td>{{ produto.preco | currency}}</td>
                         <td>{{ produto.classificacao }}</td>
                     </tr>
                 </tbody>
