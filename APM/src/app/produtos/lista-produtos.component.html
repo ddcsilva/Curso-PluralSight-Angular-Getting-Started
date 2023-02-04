@@ -19,8 +19,8 @@
                 <thead>
                     <tr>
                         <th>
-                            <button class='btn btn-primary'>
-                                Exibir Imagem
+                            <button class='btn btn-primary' (click)="alterarVisibilidadeImagem()">
+                                {{ exibirImagens ? "Ocultar" : "Exibir" }} Imagem
                             </button>
                         </th>
                         <th>Produto</th>
@@ -33,7 +33,8 @@
                 <tbody>
                     <tr *ngFor="let produto of produtos">
                         <td>
-                            <img [src]="produto.imagem" 
+                            <img *ngIf="exibirImagens"
+                                 [src]="produto.imagem" 
                                  [title]="produto.nomeProduto"
                                  [style.width.px]="larguraImagemProduto"
                                  [style.margin.px]="margemImagemProduto">
