@@ -9,6 +9,7 @@ export class ListaProdutosComponent {
     larguraImagemProduto: number = 50;
     margemImagemProduto: number = 2;
     exibirImagens: boolean = false;
+    filtro: string = "";
     produtos: any[] = [
         {
             "id": 1,
