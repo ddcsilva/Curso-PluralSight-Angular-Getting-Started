@@ -2,6 +2,7 @@ import { DEFAULT_CURRENCY_CODE, LOCALE_ID, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 import ptBr from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
@@ -28,7 +29,14 @@ registerLocaleData(ptBr);
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot([
+      { path: "produtos", component: ListaProdutosComponent },
+      { path: "produtos/:id", component: DetalheProdutoComponent },
+      { path: "home", component: HomeComponent },
+      { path: "", redirectTo: "home", pathMatch: "full" },
+      { path: "**", redirectTo: "home", pathMatch: "full" }
+    ])
   ],
   bootstrap: [
     AppComponent
