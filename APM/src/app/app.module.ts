@@ -14,6 +14,7 @@ import { ListaProdutosComponent } from './produtos/lista-produtos.component';
 import { StarComponent } from './shared/star.component';
 import { DetalheProdutoComponent } from './produtos/detalhe-produto.component';
 import { HomeComponent } from './home/home.component';
+import { DetalheProdutoGuard } from './produtos/detalhe-produto.guard';
 
 registerLocaleData(ptBr);
 
@@ -32,7 +33,11 @@ registerLocaleData(ptBr);
     HttpClientModule,
     RouterModule.forRoot([
       { path: "produtos", component: ListaProdutosComponent },
-      { path: "produtos/:id", component: DetalheProdutoComponent },
+      { 
+        path: "produtos/:id", 
+        canActivate: [DetalheProdutoGuard],
+        component: DetalheProdutoComponent
+       },
       { path: "home", component: HomeComponent },
       { path: "", redirectTo: "home", pathMatch: "full" },
       { path: "**", redirectTo: "home", pathMatch: "full" }
