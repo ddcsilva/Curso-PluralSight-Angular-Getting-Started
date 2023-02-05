@@ -12,4 +12,8 @@ export class StarComponent implements OnChanges {
     ngOnChanges(): void {
         this.larguraCorte = this.classificacao * 75/5
     }
+
+    onClick(): void {
+        console.log(`A classificação ${this.classificacao} foi clicada!`);
+    }
 }
