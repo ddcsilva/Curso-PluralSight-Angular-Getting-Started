@@ -1,6 +1,6 @@
 import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Observable, catchError, tap, throwError } from "rxjs";
+import { Observable, catchError, tap, throwError, map } from "rxjs";
 import { IProduto } from "./produtos";
 
 @Injectable({
@@ -16,6 +16,13 @@ export class ProdutoService {
             catchError(this.emitirErro)
         );
     }
+
+    obterProduto(id: number): Observable<IProduto | undefined> {
+        return this.obterProdutos()
+          .pipe(
+            map((products: IProduto[]) => products.find(p => p.id === id))
+          );
+      }
 
     private emitirErro(erro: HttpErrorResponse): Observable<never> {
         // Em um aplicativo do mundo real, podemos enviar o servidor para alguma infraestrutura de registro remoto
