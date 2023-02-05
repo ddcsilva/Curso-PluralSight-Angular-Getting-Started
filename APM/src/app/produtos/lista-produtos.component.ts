@@ -1,4 +1,5 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnDestroy, OnInit } from "@angular/core";
+import { Subscription } from "rxjs";
 import { ProdutoService } from "./produto.service";
 import { IProduto } from "./produtos";
 
@@ -7,13 +8,15 @@ import { IProduto } from "./produtos";
     templateUrl: "./lista-produtos.component.html",
     styleUrls: ["./lista-produtos.component.css"]
 })
-export class ListaProdutosComponent implements OnInit {
+export class ListaProdutosComponent implements OnInit, OnDestroy {
     constructor(private produtoService: ProdutoService) { }
 
     tituloPagina: string = "Lista de Produtos";
     larguraImagemProduto: number = 50;
     margemImagemProduto: number = 2;
     exibirImagens: boolean = false;
+    mensagemErro: string = "";
+    assinatura!: Subscription;
 
     private _filtro: string = "";
     get filtro(): string {
@@ -42,8 +45,17 @@ export class ListaProdutosComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.produtos = this.produtoService.obterProdutos();
-        this.produtosFiltrados = this.produtos;
+        this.assinatura = this.produtoService.obterProdutos().subscribe({
+            next: produtos => {
+                this.produtos = produtos;
+                this.produtosFiltrados = this.produtos;
+            },
+            error: erro => this.mensagemErro = erro
+        });
+    }
+
+    ngOnDestroy(): void {
+        this.assinatura.unsubscribe();
     }
 
     aposClassificacaoClicada(mensagem: string): void {
