@@ -1,32 +1,35 @@
+import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { Observable, catchError, tap, throwError } from "rxjs";
 import { IProduto } from "./produtos";
 
 @Injectable({
     providedIn: "root"
 })
 export class ProdutoService {
-    obterProdutos(): IProduto[] {
-        return [
-            {
-                "id": 1,
-                "nomeProduto": "Ancinho",
-                "codigoProduto": "GDN-0011",
-                "dataLancamento": "March 19, 2021",
-                "descricao": "Ancinho de folha com alça de madeira de 48 polegadas.",
-                "preco": 19.95,
-                "classificacao": 3.2,
-                "imagem": "assets/images/leaf_rake.png"
-            },
-            {
-                "id": 2,
-                "nomeProduto": "Carrinho de Jardinagem",
-                "codigoProduto": "GDN-0023",
-                "dataLancamento": "March 18, 2021",
-                "descricao": "Carrinho de Jardinagem com capacidade para 15 galões",
-                "preco": 32.99,
-                "classificacao": 4.2,
-                "imagem": "assets/images/garden_cart.png"
-            }
-        ]
+    private urlProdutos = "api/produtos/produtos.json";
+    constructor(private http: HttpClient) { }
+
+    obterProdutos(): Observable<IProduto[]> {
+        return this.http.get<IProduto[]>(this.urlProdutos).pipe(
+            tap(dados => console.log("Todos os Produtos", JSON.stringify(dados))),
+            catchError(this.emitirErro)
+        );
+    }
+
+    private emitirErro(erro: HttpErrorResponse): Observable<never> {
+        // Em um aplicativo do mundo real, podemos enviar o servidor para alguma infraestrutura de registro remoto
+        // ao invés de apenas logar no console
+        let mensagemErro = '';
+        if (erro.error instanceof ErrorEvent) {
+            // Ocorreu um erro do lado do cliente ou da rede. Trate-o de acordo.
+            mensagemErro = `Um erro ocorreu: ${erro.error.message}`;
+        } else {
+            // O back-end retornou um código de resposta malsucedido.
+            // O corpo da resposta pode conter pistas sobre o que deu errado
+            mensagemErro = `Server returned code: ${erro.status}, error message is: ${erro.message}`;
+        }
+        console.error(mensagemErro);
+        return throwError(() => mensagemErro);
     }
 }
