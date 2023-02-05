@@ -14,7 +14,11 @@ import { Component } from "@angular/core";
       <router-outlet></router-outlet>
     </div>
     `,
-  styleUrls: ['./app.component.css']
+  styles: [`
+    .nav-link { 
+      font-size: large; 
+    }
+  `]
 })
 export class AppComponent {
   tituloPagina: string = 'Gestão de Produtos ACME';
