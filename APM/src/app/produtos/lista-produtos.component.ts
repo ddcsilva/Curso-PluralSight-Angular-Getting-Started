@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { IProduto } from "./produtos";
 
 @Component({
@@ -6,7 +6,7 @@ import { IProduto } from "./produtos";
     templateUrl: "./lista-produtos.component.html",
     styleUrls: ["./lista-produtos.component.css"]
 })
-export class ListaProdutosComponent {
+export class ListaProdutosComponent implements OnInit {
     tituloPagina: string = "Lista de Produtos";
     larguraImagemProduto: number = 50;
     margemImagemProduto: number = 2;
@@ -37,5 +37,9 @@ export class ListaProdutosComponent {
     
     alterarVisibilidadeImagem(): void {
         this.exibirImagens = !this.exibirImagens;
+    }
+
+    ngOnInit(): void {
+        console.log("On Init")
     }
 }
