@@ -1,4 +1,4 @@
-import { Component, OnChanges } from "@angular/core";
+import { Component, Input, OnChanges } from "@angular/core";
 
 @Component({
     selector: "pm-star",
@@ -6,7 +6,7 @@ import { Component, OnChanges } from "@angular/core";
     styleUrls: ["./star.component.css"]
 })
 export class StarComponent implements OnChanges {
-    classificacao: number = 4;
+    @Input() classificacao: number = 0;
     larguraCorte: number = 75;
 
     ngOnChanges(): void {
