@@ -43,7 +43,7 @@
                         <td>{{ produto.codigoProduto | lowercase | converteParaEspaco:"-" }}</td>
                         <td>{{ produto.dataLancamento }}</td>
                         <td>{{ produto.preco | currency}}</td>
-                        <td>{{ produto.classificacao }}</td>
+                        <td><pm-star></pm-star></td>
                     </tr>
                 </tbody>
             </table>

@@ -7,6 +7,7 @@ import { registerLocaleData } from '@angular/common';
 
 import { AppComponent } from './app.component';
 import { ListaProdutosComponent } from './produtos/lista-produtos.component';
+import { StarComponent } from './shared/star.component';
 
 import { ConverteParaEspacoPipe } from './shared/converte-para-espaco.pipe';
 
@@ -16,7 +17,8 @@ registerLocaleData(ptBr);
   declarations: [
     AppComponent,
     ListaProdutosComponent,
-    ConverteParaEspacoPipe
+    ConverteParaEspacoPipe,
+    StarComponent
   ],
   imports: [
     BrowserModule,
