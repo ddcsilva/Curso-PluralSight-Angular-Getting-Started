@@ -39,7 +39,11 @@
                                  [style.width.px]="larguraImagemProduto"
                                  [style.margin.px]="margemImagemProduto">
                         </td>
-                        <td>{{ produto.nomeProduto }}</td>
+                        <td>
+                            <a [routerLink]="['/produtos', produto.id]">
+                                {{ produto.nomeProduto }}
+                            </a>
+                        </td>
                         <td>{{ produto.codigoProduto | lowercase | converteParaEspaco:"-" }}</td>
                         <td>{{ produto.dataLancamento | date: 'dd/MM/yyyy' }}</td>
                         <td>{{ produto.preco | currency}}</td>
