@@ -41,7 +41,7 @@
                         </td>
                         <td>{{ produto.nomeProduto }}</td>
                         <td>{{ produto.codigoProduto | lowercase | converteParaEspaco:"-" }}</td>
-                        <td>{{ produto.dataLancamento }}</td>
+                        <td>{{ produto.dataLancamento | date: 'dd/MM/yyyy' }}</td>
                         <td>{{ produto.preco | currency}}</td>
                         <td><pm-star [classificacao]="produto.classificacao" 
                                      (classificacaoClicada)="aposClassificacaoClicada($event)">

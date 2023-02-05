@@ -2,7 +2,7 @@ export interface IProduto {
     id: number;
     nomeProduto: string;
     codigoProduto: string;
-    dataLancamento: string;
+    dataLancamento: Date;
     preco: number;
     descricao: string;
     classificacao: number;
