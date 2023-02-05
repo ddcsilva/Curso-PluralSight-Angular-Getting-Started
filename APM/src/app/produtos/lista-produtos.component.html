@@ -43,7 +43,10 @@
                         <td>{{ produto.codigoProduto | lowercase | converteParaEspaco:"-" }}</td>
                         <td>{{ produto.dataLancamento }}</td>
                         <td>{{ produto.preco | currency}}</td>
-                        <td><pm-star [classificacao]="produto.classificacao"></pm-star></td>
+                        <td><pm-star [classificacao]="produto.classificacao" 
+                                     (classificacaoClicada)="aposClassificacaoClicada($event)">
+                            </pm-star>
+                        </td>
                     </tr>
                 </tbody>
             </table>

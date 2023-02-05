@@ -62,4 +62,8 @@ export class ListaProdutosComponent implements OnInit {
     ngOnInit(): void {
         this.filtro = "Carrinho";
     }
+
+    aposClassificacaoClicada(mensagem: string): void {
+        this.tituloPagina = "Lista de Produto: " + mensagem;
+    }
 }
