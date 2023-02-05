@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { ProdutoService } from "./produto.service";
 import { IProduto } from "./produtos";
 
 @Component({
@@ -7,6 +8,8 @@ import { IProduto } from "./produtos";
     styleUrls: ["./lista-produtos.component.css"]
 })
 export class ListaProdutosComponent implements OnInit {
+    constructor(private produtoService: ProdutoService) { }
+
     tituloPagina: string = "Lista de Produtos";
     larguraImagemProduto: number = 50;
     margemImagemProduto: number = 2;
@@ -25,28 +28,7 @@ export class ListaProdutosComponent implements OnInit {
 
     produtosFiltrados: IProduto[] = [];
 
-    produtos: IProduto[] = [
-        {
-            "id": 1,
-            "nomeProduto": "Ancinho",
-            "codigoProduto": "GDN-0011",
-            "dataLancamento": "March 19, 2021",
-            "descricao": "Ancinho de folha com alça de madeira de 48 polegadas.",
-            "preco": 19.95,
-            "classificacao": 3.2,
-            "imagem": "assets/images/leaf_rake.png"
-        },
-        {
-            "id": 2,
-            "nomeProduto": "Carrinho de Jardinagem",
-            "codigoProduto": "GDN-0023",
-            "dataLancamento": "March 18, 2021",
-            "descricao": "Carrinho de Jardinagem com capacidade para 15 galões",
-            "preco": 32.99,
-            "classificacao": 4.2,
-            "imagem": "assets/images/garden_cart.png"
-        }
-    ];
+    produtos: IProduto[] = [];
 
     filtrar(valorFiltro: string) : IProduto[] {
         valorFiltro = valorFiltro.toLocaleLowerCase();
@@ -60,7 +42,8 @@ export class ListaProdutosComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.filtro = "Carrinho";
+        this.produtos = this.produtoService.obterProdutos();
+        this.produtosFiltrados = this.produtos;
     }
 
     aposClassificacaoClicada(mensagem: string): void {
