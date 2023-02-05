@@ -20,7 +20,10 @@ export class ListaProdutosComponent implements OnInit {
     set filtro(valor: string) {
         this._filtro = valor;
         console.log("In Setter: ", valor);
+        this.produtosFiltrados = this.filtrar(valor)
     }
+
+    produtosFiltrados: IProduto[] = [];
 
     produtos: IProduto[] = [
         {
@@ -44,6 +47,13 @@ export class ListaProdutosComponent implements OnInit {
             "imagem": "assets/images/garden_cart.png"
         }
     ];
+
+    filtrar(valorFiltro: string) : IProduto[] {
+        valorFiltro = valorFiltro.toLocaleLowerCase();
+        return this.produtos.filter((produto: IProduto) => 
+            produto.nomeProduto.toLocaleLowerCase().includes(valorFiltro)
+        );
+    }
     
     alterarVisibilidadeImagem(): void {
         this.exibirImagens = !this.exibirImagens;
