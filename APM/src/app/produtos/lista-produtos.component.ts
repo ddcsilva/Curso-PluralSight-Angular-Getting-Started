@@ -3,7 +3,8 @@ import { IProduto } from "./produtos";
 
 @Component({
     selector: "pm-produtos",
-    templateUrl: "./lista-produtos.component.html"
+    templateUrl: "./lista-produtos.component.html",
+    styleUrls: ["./lista-produtos.component.css"]
 })
 export class ListaProdutosComponent {
     tituloPagina: string = "Lista de Produtos";
