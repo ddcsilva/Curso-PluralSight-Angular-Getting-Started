@@ -6,20 +6,24 @@ import { HttpClientModule } from '@angular/common/http';
 import ptBr from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
 
+import { ConverteParaEspacoPipe } from './shared/converte-para-espaco.pipe';
+
 import { AppComponent } from './app.component';
 import { ListaProdutosComponent } from './produtos/lista-produtos.component';
 import { StarComponent } from './shared/star.component';
-
-import { ConverteParaEspacoPipe } from './shared/converte-para-espaco.pipe';
+import { DetalheProdutoComponent } from './produtos/detalhe-produto.component';
+import { HomeComponent } from './home/home.component';
 
 registerLocaleData(ptBr);
 
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
     ListaProdutosComponent,
     ConverteParaEspacoPipe,
-    StarComponent
+    StarComponent,
+    DetalheProdutoComponent
   ],
   imports: [
     BrowserModule,
